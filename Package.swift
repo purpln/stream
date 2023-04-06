@@ -11,3 +11,7 @@ let package = Package(
         .target(name: "Stream", dependencies: [])
     ]
 )
+
+#if os(macOS) || os(iOS) || os(watchOS) || os(tvOS)
+package.platforms = [.macOS(.v13), .iOS(.v16), .watchOS(.v9), .tvOS(.v16)]
+#endif
